@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
+<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
+        <header>
+                <img class="object-center w-56"
+                src="/image/LOGO_BOOTCAMP.png">
+        </header>
+    <div class="flex items-center justify-center flex-grow">
+        <img class="object-center w-80"
+        src="/image/basurero_botellas.png">
+
+        <p class="text-4xl text-white font-semibold"> Escanea el QR </p>
+
+    </div>
+
+    <div>
+      <p class="text-white text-3xl font-semibold text-center">Gracias por sumarte al impacto! #JaRecycla</p>
+    </div>
+  </div>
+
+  <script>
+    // Obtiene una referencia al contenedor del código QR
+    const qrCodeContainer = document.getElementById('qrCodeContainer');
+
+    // Obtiene una referencia a la imagen donde se mostrará el código QR
+    const qrImage = document.getElementById('qrImage');
+
+    // Escucha el evento 'load' para cargar el código QR automáticamente al cargar la página
+    window.addEventListener('load', async () => {
+      const response = await fetch('/qr');
+      const blob = await response.blob();
+      const imageUrl = URL.createObjectURL(blob);
+      
+      qrImage.src = imageUrl;
+      qrCodeContainer.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
