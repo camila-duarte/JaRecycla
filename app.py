@@ -9,7 +9,7 @@ from generador_qr import qr_generator
 
 # CRUD - create, read, update, delete. Hay que podes lograr todo eso con nuestra base de datos. 
 
-@app.route("/cargar_datos", methods = ["GET", "POST"])
+@app.route("/vista1", methods = ["GET", "POST"])
 def cargar_datos():
     # Si el metodo es POST obtenemos los datos "nombre", etc etc...
     if request.method == "POST":
@@ -23,7 +23,7 @@ def cargar_datos():
         db.session.commit()
 
         return render_template("vista2.html")
-    return render_template("cargar_datos.html")
+    return render_template("vista1.html")
 
 @app.route("/vista2")
 def vista2():
