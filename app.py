@@ -12,7 +12,7 @@ def qr_generator(data):
     qr.add_data(data)
     qr.make(fit=True)
 
-    img = qr.make_image(fill_color="darkgreen", back_color="lightgreen")
+    img = qr.make_image(fill_color="darkgreen", back_color="lightgreen").convert("RGB")
     img_bytes_io = BytesIO()
     img.save(img_bytes_io, format="PNG")
     return img_bytes_io.getvalue()
