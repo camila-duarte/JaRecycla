@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Importando Tailwind CSS desde CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>JaRecycla - Código QR Escaneable</title>
-  <link rel="icon" type="image/png" href="/static/image/logo_jarecycla.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<body class="bg-emerald-600">
-  <div class="container mx-auto px-4 py-4">
-    <!-- Título y logo en la esquina superior izquierda -->
-    <div class="">
-      <img src="{{ url_for('static', filename='image/logo_jarecycla.png') }}" alt="Logo" class="w-24 h-20 ">
-    </div>
-    
-    <div class="flex  mr-10">
-      <img src="{{ url_for('static', filename='image/basurero_botellas.png') }}" alt="Recycling Bin" class="w-60 h-65"> <!-- Asegúrate de tener una imagen llamada "recycling-bin.png" en la misma carpeta -->
-      <div class="" id="qrCodeContainer">
-        <h2 class="text-white text-xl font-semibold">Escanear el QR</h2>
-        <img id="qrImage" alt="Código QR" class="flex ml-40">
-      </div>
-  
+<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
+        <header>
+                <img class="object-center w-56"
+                src="/image/LOGO_BOOTCAMP.png">
+        </header>
+    <div class="flex items-center justify-center flex-grow">
+        <img class="object-center w-80"
+        src="/image/basurero_botellas.png">
+
+        <p class="text-4xl text-white font-semibold"> Escanea el QR </p>
+
     </div>
 
-
-    <!-- Mensaje "Gracias por sumarte al Impacto #JaRecycla" en la esquina inferior derecha -->
-    <div class="absolute bottom-0 right-0 p-4">
-      <p class="text-white text-xl font-semibold">Gracias por sumarte al Impacto #JaRecycla</p>
+    <div>
+      <p class="text-white text-3xl font-semibold text-center">Gracias por sumarte al impacto! #JaRecycla</p>
     </div>
   </div>
 
