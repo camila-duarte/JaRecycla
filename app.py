@@ -1,7 +1,4 @@
-import qrcode
-from io import BytesIO
-from PIL import Image
-from flask import Response, Flask, render_template, request, url_for, redirect
+from flask import render_template, request, url_for, redirect
 from conexiones import app, db
 from modelo import Personas
 from generador_qr import qr_generator
