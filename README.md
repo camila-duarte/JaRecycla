@@ -6,6 +6,7 @@ Coaches
 - Camila Duarte
   
 Participantes
+
 - Gio Amaini
 - Rodrigo
 - Ruben Guerreros
