@@ -5,6 +5,9 @@ from flask import Response, Flask, render_template, request, url_for, redirect
 from conexiones import app, db
 from modelo import Personas
 
+@app.route("/vista6")
+def comprobante():
+    return render_template("vista6.html")
 
 def qr_generator(data):
     # Generar un código QR en la memoria
