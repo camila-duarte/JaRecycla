@@ -70,11 +70,16 @@ def generar_qr(cedula):
     usuario = Personas.query.filter_by(cedula=cedula).first()
     
     if usuario:
-        ip = "32433"
-        url= f"http://{ip}:5000/banner/{usuario.id}"
+        ip = "192.168.1.159"
+        port = 8000
+        url= f"http://{ip}:{port}/banner/{usuario.id}"
         qr_image =qr_generator(url)
         print(qr_image)
         
         return render_template("vista5.html", qr_image_url = url_for("static", filename="qr_xd.png"))
     else:
         return "Usuario no encontrado"
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0",port=8000)
