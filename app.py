@@ -11,10 +11,6 @@ from generador_qr import qr_generator
 
 @app.route("/vista1", methods = ["GET", "POST"])
 def vista1():
-
-def cargar_datos():
-
-
     if request.method == "POST":
         cedula = request.form["cedula"]
 
@@ -25,6 +21,7 @@ def cargar_datos():
         db.session.add(datos_personas)
         db.session.commit()
         print("Ingreso kp", datos_personas.cedula)
+        print(" usuario creado")
         return render_template("vista2.html",cedula=cedula)
     
     return render_template("vista1.html")
@@ -38,9 +35,9 @@ def vista2(cedula):
 def vista3(cedula):
     return render_template("vista3.html", cedula = cedula)
 
-@app.route("/vista4")
-def vista4():
-    return render_template("vista4.html")
+@app.route("/vista4/<int:cedula>")
+def vista4(cedula):
+    return render_template("vista4.html",cedula=cedula)
 
 @app.route("/vista5")
 def vista5():
@@ -63,20 +60,20 @@ def sumar_puntos():
         usuario.sumar_pts(punto)
         db.session.commit()
         
-        return redirect(url_for("vista4"))
+        return redirect(url_for("vista4", cedula=cedula))
     else:
         return "Usuario no encontrado"
 
 
-@app.route("/generar_qr/<int:usuario_id>", methods=["GET"])
-def generar_qr(usuario_id):
-    usuario = Personas.query.get(usuario_id)
+@app.route("/generar_qr/<int:cedula>", methods=["GET"])
+def generar_qr(cedula):
+    usuario = Personas.query.filter_by(cedula=cedula).first()
     
     if usuario:
-        punto = usuario.punto
-        url = f"/visualizar_qr/{usuario_id}/punto/{punto}"
-        qr_image = qr_generator(url)
-        
+        ip = "32433"
+        url= f"http://{ip}:5000/banner/{usuario.id}"
+        qr_image =qr_generator(url)
+        print(qr_image)
         
         return render_template("vista5.html", qr_image_url = url_for("static", filename="qr_xd.png"))
     else:

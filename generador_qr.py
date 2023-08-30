@@ -1,7 +1,7 @@
 import qrcode as qrlib
 
 def qr_generator(url):
-    
+    print("ejecutando generardor")
     try:
         qrcode = qrlib.QRCode(
             version = 7,
