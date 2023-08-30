@@ -14,7 +14,6 @@ def vista1():
 
 def cargar_datos():
 
-    # Si el metodo es POST obtenemos los datos "nombre", etc etc...
 
     if request.method == "POST":
         cedula = request.form["cedula"]
