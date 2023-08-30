@@ -7,22 +7,24 @@
     <title>Document</title>
 </head>
 <body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
-        <header>
-                <img class="object-center w-56"
-                src="/image/LOGO_BOOTCAMP.png">
+        <header class="justify-right">
+                <img class="object-center justify-left w-56"
+                src="{{url_for('static', filename='image/jalogoof.png')}}">
         </header>
+
     <div class="flex items-center justify-center flex-grow">
         <img class="object-center w-80"
-        src="/image/basurero_botellas.png">
+        src="{{url_for('static', filename='image/basurero_botellas.png')}}">
 
         <p class="text-4xl text-white font-semibold"> Escanea el QR </p>
-
     </div>
 
     <div>
-      <p class="text-white text-3xl font-semibold text-center">Gracias por sumarte al impacto! #JaRecycla</p>
+      <p class="text-white text-3xl font-semibold text-center">GRACIAS POR SUMARTE AL IMPACTO! #JaRecycla</p>
     </div>
-  </div>
+    <form action="">
+        <button class="p-3 bg-green-100  hover:bg-green-500 text-base font-medium text-center text-emerald-600 transition duration-150 ease-in-out text-4xl font-semibold mb-3 rounded-xl border-2 border-white border-opacity-80">Finalizar</button>
+    </form>
 
   <script>
     // Obtiene una referencia al contenedor del código QR
@@ -41,5 +43,6 @@
       qrCodeContainer.style.display = 'block';
     });
   </script>
+
 </body>
 </html>
