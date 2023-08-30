@@ -11,7 +11,6 @@ from generador_qr import qr_generator
 
 @app.route("/vista1", methods = ["GET", "POST"])
 def vista1():
-    # Si el metodo es POST obtenemos los datos "nombre", etc etc...
     if request.method == "POST":
         cedula = request.form["cedula"]
 
