@@ -25,17 +25,18 @@ def cargar_datos():
         db.session.add(datos_personas)
         db.session.commit()
         print("Ingreso kp", datos_personas.cedula)
-        return render_template("vista2.html", cedula = cedula)
+        return render_template("vista2.html",cedula=cedula)
+    
     return render_template("vista1.html")
 
-@app.route("/vista2")
-def vista2():
-        return render_template("vista3.html")
+@app.route("/vista2/<int:cedula>")
+def vista2(cedula):
+        return render_template("vista2.html", cedula=cedula)
 
 
-@app.route("/vista3")
-def vista3():
-    return render_template("vista3.html")
+@app.route("/vista3/<int:cedula>")
+def vista3(cedula):
+    return render_template("vista3.html", cedula = cedula)
 
 @app.route("/vista4")
 def vista4():
@@ -45,9 +46,10 @@ def vista4():
 def vista5():
     return render_template("vista5.html")
 
-@app.route("/vista6")
-def vista6():
-    return render_template("vista6.html")
+@app.route("/banner/<int:id>")
+def banner (id):
+    usuario = Personas.query.get(id)
+    return (f"Total de puntos {usuario.punto}")
 
 @app.route("/sumar_puntos/", methods=["GET", "POST"])
 def sumar_puntos():
