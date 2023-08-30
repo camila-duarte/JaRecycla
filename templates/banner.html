@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
+        <header>
+            <div>
+                <img class="object-center w-56"
+                src="/image/.png">
+        </header>
+    <div class="flex items-center justify-center flex-grow">
+        <img class="object-center w-80"
+        src="{{url_for('static', filename='image/JA_RECYCLA_CON_ESPACIO_COMPLETO-removebg-preview.png')}}">
+        <h2> Gracias por unirte al impacto!</h2>
+
+        <div>
+        <p class="text-4xl text-white font-semibold"> CI/RUC: {{usuario.cedula}} </p>
+        <p class="text-4xl text-white font-semibold"> Total de puntos: {{usuario.punto}} </p>
+        </div>
+
+    </div>
+
+    <div>
+      <p class="text-white text-3xl font-semibold text-center">#JaRecycla</p>
+    </div>
+    <div class="p-7">
+
+    </div>
+  </div>
