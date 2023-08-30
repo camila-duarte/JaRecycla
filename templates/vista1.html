@@ -11,27 +11,33 @@
 <body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
     <div class="flex flex-col justify-center items-center">
       <div class="w-1/4 flex justify-center">
-        <img src="/image/JA_RECYCLA_CON_ESPACIO_COMPLETO-removebg-preview.png" alt="Logo" class="object-center w-56 ">
+        <img src="{{url_for('static', filename='image/jalogoof.png')}}" alt="Logo" class="object-center w-56 ">
       </div>
       <main class="flex-grow flex items-center justify-center">
         <div class="flex gap-[3rem] items-center w-[85%] h-[65.3vh]">
-          <img src="/image/personas.png" alt="Imagen" class="w-1/2">
+          <img src="{{url_for('static', filename='image/personas.png')}}" alt="Imagen" class="w-1/2">
           <div class="text-2xl drop-shadow-xl">
 
-            <h2 class="text-green-500 font-semibold text-shadow mb-6 text-6xl">GANA RECICLANDO</h2>
-            <form action="" method="">
-              <label class="block font-semibold text-white">Nombre:</label>
-              <input class="w-full border rounded mb-6 p-2" type="text" placeholder="Ingrese su nombre">
-              <label class="block font-semibold text-white">Cédula:</label>
-              <input class="w-full border rounded p-2" type="text" placeholder="Ingrese su cédula">
-            </form>
+            <h2 class="text-green-500 font-semibold text-shadow mb-6 text-6xl">GANA RECICLANDO!</h2>
+            <form action="/vista1" method="post">
+              <label for="cedula" class="block font-semibold text-white">Cédula: </label>
+              <input class="w-full border rounded mb-6 p-1 text-base" type="number" name="cedula" id= "cedula" placeholder="Ingresa tu cédula" required>
           </div>
         </div>
+        <div class=" flex justify-center from-emerald-400">
+          <button type= "submit"   class="p-6 bg-green-100  hover:bg-green-500 text-base font-medium text-center text-emerald-600 transition duration-150 ease-in-out text-2xl font-semibold mb-3 rounded-xl border-2 border-white border-opacity-80">Enviar</button>
+        </div>
+          </form>
+        <div class="p-7">
+          
+        </div>
+
       </main>
-      <footer class=" flex justify-center from-emerald-400">
-        <button class="p-1 hover:bg-green-600 text-white transition duration-300 ease-in text-2xl font-semibold mb-3 rounded-full border-2 border-white border-opacity-60 ">Enviar</button>
-      </footer>
     </div>
+    <div class="p-3">
+          
+    </div>
+
 </body>
 </html>
 

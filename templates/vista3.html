@@ -1,45 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-
-
-<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
-    <header>
-            <ul class="flex justify-items m-8">
-                <li class="inline-block align-baseline w-16">
-                        <img class="object-center w-56"
-                    src="/image/LOGO_BOOTCAMP.png">
-                </li>
-                <li class="inline-block align-baseline w-32 justify-center" >
-                    <a href=""><img src="/image/solo_nombre-removebg-solo loggo.png" alt="Nombre de la empresa Ya recicla"></a>
-                </li>
-            </ul>
-    </header>
-    <nav>
-        <main>
-            <section class=" flex justify-center space around  ">
-                <button type="button"><div><a href=""><img src="../image/anadir.png" alt="Una botella menos" class="w-28 h-28"></a></div></button>
-                <div><a href=""><img src="../image/2424874.png" alt="Imagen de botella de        plastico"class="w-44  h-44"></a>
-                </div>                
-                    <button type="button"><div><a href=""><img src="../image/signo-menos-de-una-linea-en-posicion-horizontal.png" alt="Agregar una botella mas" class="w-28 h-28"></a></div></button>
-            </section>
-        </main>
-                <div>
-                <article class="flex justify-center divide-white" >
-                    <div><button class="h-8 px-8 rounded-full border border-slate-200"type="button">Atras  </button ></div>
-                    <div><button class="h-8 px-8 rounded-full border border-slate-200"type="button">Siguente  </button></div>
-                </article>
-            </div>
-    </nav>        
-
-
-</body>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,18 +6,32 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600 bg-full">
-        <header class="flex justify-left ">
+
+<body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
+    <div class="w-[50] flex justify-center">
             <img class="object-center w-56"
-            src="/image/LOGO_BOOTCAMP.png">
-        </header>
+            src="{{url_for('static', filename='image/jalogotodo1.png')}}">
+    </div>
+        <div class="text-center">
+            <p class="p-5"> </p>
+            <form action="/sumar_puntos" method="POST">
+                <label for="cantidad" class="text-4xl text-white font-semibold p-8">Cantidad de objetos de plástico a reciclar:</label>
+                
+                <p class="p-8"> </p>
+                
+                <input type="hidden" value="{{cedula}}" name="cedula" id="cedula" />
+                <input type="number" name="cantidad" id="cantidad" required class="block w-96 p-4 rounded-lg mt-2 mx-auto"/>
+
+                <p class="text-1xl text-green-500 font-semibold p-11">Puntos ganados por objeto: 1</p>
+
+                <input type="submit" value="           Reciclar          " class="p-4 bg-green-100  hover:bg-green-500 text-base font-medium text-center text-emerald-600 transition duration-150 ease-in-out text-2xl font-semibold mb-3 rounded-xl border-2 border-white border-opacity-80"/>
+
+                <p class="p-12"> </p>
+
+              </form>              
+        </div>
         <section>
         <div>
-            
-        <button type="button"></button>
-        <button type="button"></button>
-        
-
     </section>
     
 </body>

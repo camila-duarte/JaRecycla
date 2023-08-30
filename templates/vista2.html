@@ -7,39 +7,35 @@
     <title>Document</title>
 </head>
 <body class="bg-gradient-to-t from-emerald-800 via-emerald-700 to-emerald-600">
-        <header>
+        <div class="w-[50] flex justify-center">
                 <img class="object-center w-56"
-                src="/image/LOGO_BOOTCAMP.png">
-        </header>
+                src="{{url_for('static', filename='image/jalogotodo1.png')}}">
+        </div>
         <div class="text-center">
             <p class="text-4xl text-white font-semibold">
             ¿Qué te gustaría reciclar?
             </p>
         </div>
         <div class="flex justify-center p-8">
-            <button class= "animate-pulse transform hover:scale-105 onclick=redirigir()">
-            <img class="h-80 mx-left"
-            src="/image/agua.png">
+            <form action="/vista2" method="post">
+            <a href="agua/{{cedula}}"><button class= "animate-pulse transform hover:scale-125">
+            <img class="h-72 mx-left"
+            src="{{url_for('static', filename='image/agua.png')}}">
+            </button></a>
+            </form>
+
+            <button class= "animate-pulse transform hover:scale-125">
+            <img class="h-80 mx-center object-center p-2"
+            src="{{url_for('static', filename='image/caja-de-carton.png')}}">
             </button>
 
-            <button class= "animate-pulse transform hover:scale-105">
-            <img class="h-80 mx-center object-center p-2"
-            src="/image/caja-de-carton.png">
-            </button>
-
-            <button class= "animate-pulse transform hover:scale-105">
-            <img class="h-80 mx-center object-center p-2"
-            src="/image/lata-de-refresco.png">
+            <button class= "animate-pulse transform hover:scale-125">
+            <img class="h-72 mx-center object-center p-1"
+            src="{{url_for('static', filename='image/lata-de-refresco.png')}}">
             </button>
         </div>
-        <div class="p-20"> 
-
-        </div>
-
-        <script>
-            function redirigir() {
-                window.location.href = "vista3.html";
-            }
-        </script>
+        <div class="p-8"></div>
+            
+    
 </body>
 </html>

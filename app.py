@@ -9,8 +9,8 @@ from generador_qr import qr_generator
 
 # CRUD - create, read, update, delete. Hay que podes lograr todo eso con nuestra base de datos. 
 
-@app.route("/cargar_datos", methods = ["GET", "POST"])
-def cargar_datos():
+@app.route("/vista1", methods = ["GET", "POST"])
+def vista1():
     # Si el metodo es POST obtenemos los datos "nombre", etc etc...
     if request.method == "POST":
         cedula = request.form["cedula"]
@@ -21,13 +21,30 @@ def cargar_datos():
 
         db.session.add(datos_personas)
         db.session.commit()
-
+        print("Ingreso kp", datos_personas.cedula)
         return render_template("vista2.html")
-    return render_template("cargar_datos.html")
+    return render_template("vista1.html")
 
 @app.route("/vista2")
 def vista2():
-    return render_template("vista2.html")
+        return render_template("vista3.html")
+
+
+@app.route("/vista3")
+def vista3():
+    return render_template("vista3.html")
+
+@app.route("/vista4")
+def vista4():
+    return render_template("vista4.html")
+
+@app.route("/vista5")
+def vista5():
+    return render_template("vista5.html")
+
+@app.route("/vista6")
+def vista6():
+    return render_template("vista6.html")
 
 @app.route("/sumar_puntos/", methods=["GET", "POST"])
 def sumar_puntos():
