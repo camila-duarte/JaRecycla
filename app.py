@@ -25,7 +25,7 @@ def cargar_datos():
         db.session.add(datos_personas)
         db.session.commit()
         print("Ingreso kp", datos_personas.cedula)
-        return render_template("vista2.html")
+        return render_template("vista2.html", cedula = cedula)
     return render_template("vista1.html")
 
 @app.route("/vista2")
